@@ -10,4 +10,21 @@
 
 @interface Vehicle : NSObject
 
+@property (nonatomic, assign) NSInteger numberOfWheels;
+@property (nonatomic, copy) NSString *powerSource;
+@property (nonatomic, copy) NSString *brandName;
+@property (nonatomic, copy) NSString *modelName;
+@property (nonatomic, assign) NSInteger modelYear;
+
+-(NSString *)goForward;
+-(NSString *)goBackward;
+-(NSString *)stopMoving;
+-(NSString *)changeGears:(NSString *)newGearName;
+-(NSString *)turn:(NSInteger)degrees;
+-(NSString *)makeNoise;
+-(NSString *)vehicleDetailsString;
+
+//Convenience method for UITableViewCells and UINavigationBar titles.
+-(NSString *)vehicleTitleString;
+
 @end

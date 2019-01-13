@@ -51,11 +51,34 @@
 }
 
 #pragma mark - Managing the detail item
-- (void)configureView
+// replacing longer version which asks view controller to handle too much
+//- (void)configureView
+//{
+//    // Update the user interface for the detail vehicle, if it exists.
+//    if (self.detailVehicle) {
+//        //Set the View Controller title, which will display in the Navigation bar.
+//        self.title = [self.detailVehicle vehicleTitleString];
+//
+//        //Setup the basic details string based on the properties in the base Vehicle class.
+//        NSMutableString *basicDetailsString = [NSMutableString string];
+//        [basicDetailsString appendString:@"Basic vehicle details:\n\n"];
+//        [basicDetailsString appendFormat:@"Brand name: %@\n", self.detailVehicle.brandName];
+//        [basicDetailsString appendFormat:@"Model name: %@\n", self.detailVehicle.modelName];
+//        [basicDetailsString appendFormat:@"Model year: %d\n", self.detailVehicle.modelYear];
+//        [basicDetailsString appendFormat:@"Power source: %@\n", self.detailVehicle.powerSource];
+//        [basicDetailsString appendFormat:@"# of wheels: %d", self.detailVehicle.numberOfWheels];
+//
+//        self.vehicleDetailsLabel.text = basicDetailsString;
+//    }
+//}
+
+-(void)configureView
 {
-    // Update the user interface for the detail item.
+    // update the user interface for the detail vehicle, if it exists.
     if (self.detailVehicle) {
-        //TODO: Fill this in.
+        // set the View Controller title, which will display the navigation bar
+        self.title = [self.detailVehicle vehicleTitleString];
+        self.vehicleDetailsLabel.text = [self.detailVehicle vehicleDetailsString];
     }
 }
 
